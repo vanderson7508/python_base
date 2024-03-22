@@ -1,0 +1,131 @@
+Cliente:vanderson
+Quarto:Quarto Familia
+Dias:4
+Valor total:2000
+
+ Cliente:ludmilla
+Quarto:Quarto Single
+Dias:9
+Valor total:1800
+
+ Cliente:carlos
+Quarto:Quarto Familia
+Dias:10
+Valor total:5000
+
+ Cliente:estefani
+Quarto:Quarto Single
+Dias:8
+Valor total:1600
+
+ Cliente:tania
+Quarto:Quarto Simples
+Dias:7
+Valor total:700
+
+ Cliente:elias
+Quarto:Quarto Simples
+Dias:4
+Valor total:400
+
+ Cliente:isa
+Quarto:Quarto Simples
+Dias:5
+Valor total:250
+
+ Cliente:samara,
+Quarto:Quarto Familia,
+Dias:10,
+Valor total:2000,
+
+ Cliente:ludmilla,
+Quarto:Suite Master,
+Dias:20,
+Valor total:10000,
+
+ Cliente:vanderson,
+Quarto:Quarto Familia,
+Dias:5,
+Valor total:1000,
+
+ Cliente:dd,
+Quarto:Suite Master,
+Dias:2,
+Valor total:1000,
+
+ Cliente:vanderson,
+Quarto:Suite Master,
+Dias:10,
+Valor total:5000,
+
+ Cliente:ludmilla,
+Quarto:Quarto Familia,
+Dias:5,
+Valor total:1000,
+
+ Cliente:gustavo,
+Quarto:Suite Master,
+Dias:10,
+Valor total:5000,
+
+ Cliente:vanderson,
+Quarto:Suite Master,
+Dias:2,
+Valor total:1000,
+
+ Cliente:welton,
+Quarto:Quarto Familia,
+Dias:5,
+Valor total:1000,
+
+ Cliente:filipe,
+Quarto:Suite Master,
+Dias:8,
+Valor total:4000,
+
+ Cliente:vanderson,
+Quarto:Suite Master,
+Dias:10,
+Valor total:5000,
+
+ Cliente:ludmilla,
+Quarto:Suite Master,
+Dias:5,
+Valor total:2500,
+
+ Cliente:vanderson,
+Quarto:Suite Master,
+Dias:5,
+Valor total:2500,
+
+ Cliente:carlos,
+Quarto:Quarto Familia,
+Dias:7,
+Valor total:1400,
+
+ Cliente:tulio,
+Quarto:Suite Master,
+Dias:8,
+Valor total:4000,
+
+ Cliente:joao,
+Quarto:Quarto Familia,
+Dias:9,
+Valor total:1800,
+
+ Cliente:thiago,
+Quarto:Quarto Familia,
+Dias:15,
+Valor total:3000,
+
+ Cliente:iago,
+Quarto:Quarto Simples,
+Dias:30,
+Valor total:1500,
+
+ Cliente:mateus,
+Quarto:Quarto Single,
+Dias:365,
+Valor total:36500,
+
+ 

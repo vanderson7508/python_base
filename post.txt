@@ -1,0 +1,7 @@
+title: Meu post
+tags: tech, geral
+published:1
+---
+Este é o meu post
+Aqui tem texto e conteudo
+etc. etc. etc.

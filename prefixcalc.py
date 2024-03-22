@@ -63,67 +63,72 @@ ch.setFormatter(fmt)
 log.addHandler(ch)
 
 
-arguments = sys.argv[1:]
-
 #TODO: Exceptions
-if not arguments:
-    operation = input("operacao: ")
-    n1 = input("n1: ")
-    n2 = input("n2: ")
-    arguments = [operation, n1, n2]
-    
-elif len(arguments) != 3:
-    print("Numero de argumentos invalidos")
-    print("ex: 'sum 5 5'")
-    sys.exit(1)
 
-operation, *nums = arguments
+while True:
 
-valid_operations = ("sum", "sub", "mul", "div")
-if operation not in valid_operations:
-    print("Operacao invalida")
-    print(valid_operations)
-    sys.exit(1)
+    arguments = sys.argv[1:]
 
-validated_nums = []
-for num in nums:
-    #TODO: repeticao while + excepetions
-    if not num.replace(".","").isdigit():
-        print(f"Numero invalido {num}")
+    if not arguments:
+        operation = input("operacao: ")
+        n1 = input("n1: ")
+        n2 = input("n2: ")
+        arguments = [operation, n1, n2]
+        
+    elif len(arguments) != 3:
+        print("Numero de argumentos invalidos")
+        print("ex: 'sum 5 5'")
         sys.exit(1)
-    if "." in num:
-        num = float(num)
-    else:
-        num = int(num)
-    validated_nums.append(num)
 
-n1, n2 = validated_nums
+    operation, *nums = arguments
 
-#TODO: Usar dict de funcoes
-if operation == "sum":
-    result = n1 + n2
-if operation == "sub":
-    result = n1 - n2
-if operation == "mul":
-    result = n1 * n2
-if operation == "div":
-    result = n1 / n2
+    valid_operations = ("sum", "sub", "mul", "div")
+    if operation not in valid_operations:
+        print("Operacao invalida")
+        print(valid_operations)
+        sys.exit(1)
 
-path = "/"
-filepath = os.path.join(path, "prefixcalc.log")
-timestamp = datetime.now().isoformat()
-user = os.getenv('USER', 'anonymous')
+    validated_nums = []
+    for num in nums:
+        #TODO: repeticao while + excepetions
+        if not num.replace(".","").isdigit():
+            print(f"Numero invalido {num}")
+            sys.exit(1)
+        if "." in num:
+            num = float(num)
+        else:
+            num = int(num)
+        validated_nums.append(num)
 
-print(f"O resultado é {result}")
+    n1, n2 = validated_nums
 
-try:
-    with open(filepath, "a") as file_:
-        file_.write(f"{timestamp} - {user} -  {operation}, {n1}, {n2} = {result}\n")
-except PermissionError as e:
-    log.error(
-        "voce nao tem acesso para ler o arquivo %s",
-        str(e)
-    )
-    sys.exit(1)
+    #TODO: Usar dict de funcoes
+    if operation == "sum":
+        result = n1 + n2
+    if operation == "sub":
+        result = n1 - n2
+    if operation == "mul":
+        result = n1 * n2
+    if operation == "div":
+        result = n1 / n2
 
+    path = os.curdir
+    filepath = os.path.join(path, "prefixcalc.log")
+    timestamp = datetime.now().isoformat()
+    user = os.getenv('USER', 'anonymous')
+
+    print(f"O resultado é {result}")
+
+    try:
+        with open(filepath, "a") as file_:
+            file_.write(f"{timestamp} - {user} -  {operation}, {n1}, {n2} = {result}\n")
+    except PermissionError as e:
+        log.error(
+            "voce nao tem acesso para ler o arquivo %s",
+            str(e)
+        )
+        sys.exit(1)
+
+    if  input("Pressione enter para continuar ou qualquuer tecla para sair  "):
+        break
 
