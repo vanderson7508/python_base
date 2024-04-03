@@ -62,12 +62,21 @@ fmt = logging.Formatter(
 ch.setFormatter(fmt)
 log.addHandler(ch)
 
+arguments = sys.argv[1:]
 
-#TODO: Exceptions
+valid_operations = {
+    "sum": lambda a, b: a + b,
+    "sub": lambda a, b: a - b,
+    "mul": lambda a, b: a * b,
+    "div": lambda a, b: a / b,
+}
+
+path = os.curdir
+filepath = os.path.join(path, "prefixcalc.log")
+timestamp = datetime.now().isoformat()
+user = os.getenv('USER', 'anonymous')
 
 while True:
-
-    arguments = sys.argv[1:]
 
     if not arguments:
         operation = input("operacao: ")
@@ -82,7 +91,6 @@ while True:
 
     operation, *nums = arguments
 
-    valid_operations = ("sum", "sub", "mul", "div")
     if operation not in valid_operations:
         print("Operacao invalida")
         print(valid_operations)
@@ -90,7 +98,6 @@ while True:
 
     validated_nums = []
     for num in nums:
-        #TODO: repeticao while + excepetions
         if not num.replace(".","").isdigit():
             print(f"Numero invalido {num}")
             sys.exit(1)
@@ -99,24 +106,13 @@ while True:
         else:
             num = int(num)
         validated_nums.append(num)
-
-    n1, n2 = validated_nums
-
-    #TODO: Usar dict de funcoes
-    if operation == "sum":
-        result = n1 + n2
-    if operation == "sub":
-        result = n1 - n2
-    if operation == "mul":
-        result = n1 * n2
-    if operation == "div":
-        result = n1 / n2
-
-    path = os.curdir
-    filepath = os.path.join(path, "prefixcalc.log")
-    timestamp = datetime.now().isoformat()
-    user = os.getenv('USER', 'anonymous')
-
+    try:
+        n1, n2 = validated_nums
+    except ValueError as e:
+        print(str(e))
+        sys.exit(1)
+   
+    result = valid_operations[operation](n1, n2)
     print(f"O resultado é {result}")
 
     try:
